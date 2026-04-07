@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>sandbox</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    <!-- AppBar -->
+    <div class="jss1">
+      <header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorDefault MuiPaper-elevation4">
+        <div class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters">
+          <button class="MuiButtonBase-root MuiIconButton-root jss3 MuiIconButton-colorInherit" type="button" aria-label="Menu">
+            <span class="MuiIconButton-label">
+              <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+            </span>
+            <span class="MuiTouchRipple-root"></span>
+          </button>
+          <a class="MuiButtonBase-root MuiButton-root MuiButton-text jss4 MuiButton-colorInherit" href="/">
+            <span class="MuiButton-label">
+              <svg width="111" height="32" viewBox="0 0 111 32" class="d-inline-block align-top" role="img" aria-label="sandbox logo">
+                <rect width="32" height="32" rx="4" fill="#6366f1"/>
+                <text x="6" y="23" font-size="18" font-weight="700" fill="#fff" font-family="Roboto, sans-serif">S</text>
+                <text x="40" y="22" font-size="16" font-weight="500" fill="rgba(0,0,0,0.87)" font-family="Roboto, sans-serif">sandbox</text>
+              </svg>
+            </span>
+            <span class="MuiTouchRipple-root"></span>
+          </a>
+          <h6 class="MuiTypography-root jss5 MuiTypography-h6">sandbox</h6>
+          <div class="jss2"></div>
+          <div class="jss6">
+            <button class="MuiButtonBase-root MuiButton-root MuiButton-text" type="button" onclick="alert('Training: This is a mock feature.')">
+              <span class="MuiButton-label">training</span>
+              <span class="MuiTouchRipple-root"></span>
+            </button>
+          </div>
+          <div class="jss7">
+            <button class="MuiButtonBase-root MuiButton-root MuiButton-text" type="button" onclick="alert('Examples: This is a mock feature.')">
+              <span class="MuiButton-label">examples</span>
+              <span class="MuiTouchRipple-root"></span>
+            </button>
+          </div>
+          <div class="jss8">
+            <button class="MuiButtonBase-root MuiButton-root MuiButton-text" type="button" onclick="alert('Help: This is a mock feature.')">
+              <span class="MuiButton-label">help</span>
+              <span class="MuiTouchRipple-root"></span>
+            </button>
+          </div>
+          <label class="MuiFormControlLabel-root jss9">
+            <span class="MuiSwitch-root">
+              <span class="MuiButtonBase-root MuiIconButton-root jss10 MuiSwitch-switchBase">
+                <span class="MuiIconButton-label">
+                  <input class="jss13 MuiSwitch-input" type="checkbox" value="">
+                  <span class="MuiSwitch-thumb"></span>
+                </span>
+                <span class="MuiTouchRipple-root"></span>
+              </span>
+              <span class="MuiSwitch-track"></span>
+            </span>
+            <span class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">
+              <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79-4-4 4-1.79 4-4z"></path>
+              </svg>
+            </span>
+          </label>
+        </div>
+      </header>
+    </div>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <div class="MuiGrid-root mfa-totp-container MuiGrid-container">
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12">
+          <div class="MuiGrid-root">
+            <h3 class="MuiTypography-root MuiTypography-h3">Authenticator</h3>
+            Example authenticator workflow
+          </div>
+          <div class="MuiGrid-root">
+            <canvas data-testid="totp-qr-code" class="totp-qr-code" id="qr-canvas" height="196" width="196" style="height: 196px; width: 196px;"></canvas>
+            <br>
+            Add this QR code to your authenticator app
+            <br>
+            <span class="prevent-select">Or use this code</span>
+            <span data-testid="totp-raw-code" class="totp-raw-code">JBSWY3DPEHPK3PXP</span>
+          </div>
+        </div>
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12">
+          <div class="MuiGrid-root totp-try-me-section MuiGrid-item MuiGrid-grid-xs-12">
+            <h4 class="MuiTypography-root MuiTypography-h4">Validate</h4>
+            Provide a code from your authenticator app
+            <form action="#">
+              <div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal">
+                <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true">code</label>
+                <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                  <input aria-invalid="false" name="code" type="text" class="MuiInputBase-input MuiInput-input" value="">
+                </div>
+              </div>
+              <p class="MuiTypography-root MuiTypography-body1" id="validation-result"></p>
+              <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined spaced" tabindex="0" type="submit">
+                <span class="MuiButton-label">validate</span>
+                <span class="MuiTouchRipple-root"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var canvas = document.getElementById('qr-canvas');
+      var secret = 'JBSWY3DPEHPK3PXP';
+      var otpauthUrl = 'otpauth://totp/sandbox:user@example.com?secret=' + secret + '&issuer=sandbox';
+      QRCode.toCanvas(canvas, otpauthUrl, { width: 196 }, function(error) {
+        if (error) console.error(error);
+      });
+    });
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var code = document.querySelector('input[name="code"]').value;
+      var result = document.getElementById('validation-result');
+      if (code && code.length === 6 && /^\d+$/.test(code)) {
+        result.textContent = 'Code accepted (mock validation)';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Invalid code. Please enter a 6-digit code.';
+        result.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>
